@@ -1,6 +1,8 @@
 import Button from "./component/Button"
 import Card from "./component/Card"
 import Student from "./component/Student"
+import UserGreeting from "./component/UserGreeting"
+
 
 function App() {
  
@@ -13,7 +15,8 @@ function App() {
       <Student name="Jane Smith" age={25} isStudent ={false} />
       <Student name="Alice Johnson" age={22} isStudent ={true} />
       <Student name="Bob Brown" age={28} isStudent ={false} />
-      <Student/>
+
+      <UserGreeting isLoggedIn ={false} username="T-phils" />
     </>
   )
 }
