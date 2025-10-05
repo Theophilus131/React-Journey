@@ -12,9 +12,9 @@ function App() {
      <Card />
      <Button />
      <Student name="John Doe" age={30} isStudent ={true} />
-      <Student name="Jane Smith" age={25} isStudent ={false} />
-      <Student name="Alice Johnson" age={22} isStudent ={true} />
-      <Student name="Bob Brown" age={28} isStudent ={false} />
+     <Student name="Jane Smith" age={25} isStudent ={false} />
+     <Student name="Alice Johnson" age={22} isStudent ={true} />
+     <Student name="Bob Brown" age={28} isStudent ={false} />
 
       <UserGreeting isLoggedIn ={false} username="T-phils" />
     </>
