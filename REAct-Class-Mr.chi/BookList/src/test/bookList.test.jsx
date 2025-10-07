@@ -36,6 +36,36 @@ test("that i can delete a book",()=>{
 
     expect(listItem.length).toBe(3);
 })
+
+test("that i can add a book",()=>{
+   
+    const input = screen.getByPlaceholderText(/add a book/i)
+    const addBookForm = input.closest("form")
+
+    fireEvent.change(input,{target:{value:"Eze goes to school"}})
+ 
+    fireEvent.submit(addBookForm)
+
+    const result = screen.getByText(/Eze goes to school/i)
+
+    expect(result).toBeTruthy()
+
+    
+
+})
+
+
+test("that i can search for a book",()=>{
+   
+    const input = screen.getByPlaceholderText(/search books/i)
+    fireEvent.change(input,{target:{value:"Kafka"}})
+
+    const result = screen.getByText(/Kafka on the Shore/i)
+
+    expect(result).toBeTruthy()
+    
+
+})
     
   
 

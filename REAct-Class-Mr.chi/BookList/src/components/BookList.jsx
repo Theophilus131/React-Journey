@@ -11,8 +11,10 @@ const BookList =() => {
 	]	
 
 
-
 	const [books, setBooks] = useState(listofBooks)
+
+	const [newBook, setNewBook] = useState()
+
 
 	const handleDelete = (clickedBook) => {
 
@@ -21,15 +23,43 @@ const BookList =() => {
 	}
 
 
+	const handleTextBook = (event) => {
+		setNewBook(event.target.value.trim())
+
+	}
+
+
+	const addBookHandler = (e) => {
+		e.preventDefault()
+
+		if(newBook){
+			setBooks((prevBook) => ([...prevBook, newBook]))
+			
+		}
+	
+	}
+
+	const handleSearchBook = (event) => {
+		const searchText = event.target.value.trim().toLowerCase()
+		const filteredBooks = listofBooks.filter((book) => book.toLowerCase().includes(searchText))
+		setBooks(filteredBooks)
+		
+	}
+
+
+
     return(
   	<div className={styles.wrapper}>
 	    <header>
 	    	<div className={styles.pageBanner}>
 	    		<h1 className="title"> Book Collections</h1>
                 <p>Books</p>
-                <form className="search-books">
-                    <input type="text" placeholder="Search books..." />
+                
+				<form className="search-books">
+                    <input type="text" onChange ={handleSearchBook} placeholder ="Search books..." />
                 </form>
+
+
 	    	</div>
 	    </header>
 	    <div className={styles.booklist}>
@@ -50,9 +80,6 @@ const BookList =() => {
 				}
 
 			</ul>
-
-			
-
 
 
 	    	{/* <ul>
@@ -75,10 +102,11 @@ const BookList =() => {
 	    	</ul> */}
 
 	    </div>
-	    <form type="submit" className={styles.addbook}>
-	    	<input type="text" placeholder="Add a book..." />
+	    <form type="submit" onSubmit={addBookHandler} className={styles.addbook}>
+	    	<input type="text" onChange = {handleTextBook} placeholder="Add a book..." />
 	    	<button>Add</button>
 	    </form>
+		
 
     </div>
 
