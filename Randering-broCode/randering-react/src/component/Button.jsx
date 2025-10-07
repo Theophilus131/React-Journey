@@ -2,10 +2,14 @@
 
 function Button() {
 
-    const handleClick = () => {console.log("Button Clicked")}   
+    
+    const handleClick = () => {console.log("Button Clicked")}  
+    
+    const handleClickAgain = (name) => {console.log(`${name} stop clicking me`)}
+
 
 return(
-    <button onClick = {handleClick}> Click Me</button>
+    <button onClick = {() => handleClickAgain("theo")}> Click Me</button>
 
 )
 
