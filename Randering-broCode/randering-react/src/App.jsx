@@ -1,6 +1,8 @@
 
 import List from './component/List';
 import Button from './component/Button';
+import Picture from './component/Picture';
+
 
 function App() {
 
@@ -13,7 +15,9 @@ function App() {
     <>
     <List items ={fruits} category = "fruits" />
 
-    <Button />
+    {/* <Button /> */}
+
+    <Picture />
     
     
     
