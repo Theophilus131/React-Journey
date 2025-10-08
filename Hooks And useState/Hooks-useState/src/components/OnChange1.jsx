@@ -8,6 +8,14 @@ function OnChange1() {
 
    const [quantity, setQuantity] = useState(1);
 
+  const [comment, setComment] = useState("");
+
+
+  function handleCommentChange(event) {
+        setComment(event.target.value);
+   }
+
+
    function handleQuantityChange(event) {
         setQuantity(event.target.value);
    }
@@ -25,6 +33,9 @@ function OnChange1() {
       <br />
       <input type="number" value={quantity} onChange={handleQuantityChange}></input>
       <p>Your order quantity is: {quantity}</p>
+      <br />
+      <textarea value={comment} onChange={handleCommentChange} placeholder="Enter your comment"></textarea>
+      <p>Your comment is: {comment}</p>
     </div>
   )
 }
