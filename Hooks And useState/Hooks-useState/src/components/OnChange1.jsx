@@ -10,6 +10,12 @@ function OnChange1() {
 
   const [comment, setComment] = useState("");
 
+  const [payment, setPayment] = useState("");
+
+  function handlePaymentChange(event) {
+        setPayment(event.target.value);
+   }
+
 
   function handleCommentChange(event) {
         setComment(event.target.value);
@@ -36,6 +42,16 @@ function OnChange1() {
       <br />
       <textarea value={comment} onChange={handleCommentChange} placeholder="Enter your comment"></textarea>
       <p>Your comment is: {comment}</p>
+
+      <br />
+      <select value={payment} onChange={handlePaymentChange}>
+        <option value="">Select Payment Method</option>
+        <option value="creditcard">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="bitcoin">Bitcoin</option>
+      </select>
+      <p>Your selected payment method is: {payment}</p>
+      
     </div>
   )
 }
