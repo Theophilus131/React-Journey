@@ -12,6 +12,8 @@ function OnChange1() {
 
   const [payment, setPayment] = useState("");
 
+  const [shipping, setShipping] = useState("");
+
   function handlePaymentChange(event) {
         setPayment(event.target.value);
    }
@@ -28,6 +30,10 @@ function OnChange1() {
 
    function handleNameChange(event) {
         setName(event.target.value);
+   }
+
+   function handleShippingChange(event) {
+        setShipping(event.target.value);
    }
 
 
@@ -51,7 +57,18 @@ function OnChange1() {
         <option value="bitcoin">Bitcoin</option>
       </select>
       <p>Your selected payment method is: {payment}</p>
-      
+      <br />
+
+      <label>
+        <input type="radio" value="standard" checked={shipping === "standard"} onChange={handleShippingChange} />
+        Standard Shipping
+      </label>
+      <label>
+        <input type="radio" value="express" checked={shipping === "express"} onChange={handleShippingChange} />
+        Express Shipping
+      </label>
+      <p>Your selected shipping method is: {shipping}</p>
+
     </div>
   )
 }
