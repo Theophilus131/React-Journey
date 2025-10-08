@@ -1,13 +1,15 @@
 
 
 import Hello from "./components/Hello";
+import Counter from "./components/Counter"
 
 function App() {
   
   return (
     <>
       
-      <Hello />
+      {/* <Hello /> */}
+      <Counter />
 
     </>
   )
