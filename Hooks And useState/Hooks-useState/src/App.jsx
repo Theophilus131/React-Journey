@@ -2,6 +2,7 @@
 
 import Hello from "./components/Hello";
 import Counter from "./components/Counter"
+import OnChange1 from "./components/OnChange1";
 
 function App() {
   
@@ -9,7 +10,8 @@ function App() {
     <>
       
       {/* <Hello /> */}
-      <Counter />
+      {/* <Counter /> */}
+      <OnChange1 />
 
     </>
   )
